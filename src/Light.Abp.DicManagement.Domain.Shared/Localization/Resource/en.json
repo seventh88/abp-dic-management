@@ -1,0 +1,13 @@
+{
+  "culture": "en",
+  "texts": {
+    "DicManagement": "DicManagement",
+    "Dic:View": "Dic:View",
+    "ComplexDic:View": "ComplexDic:View",
+    "Permission:Create": "Permission:Create",
+    "Permission:Update": "Permission:Update",
+    "Permission:Delete": "Permission:Delete",
+    "Permission:Read": "Permission:Read",
+    "UnknownDicCategory": "UnknownDicCategory"
+  }
+}
