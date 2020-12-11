@@ -1,0 +1,13 @@
+{
+  "culture": "zh-Hant",
+  "texts": {
+    "DicManagement": "字典管理",
+    "Dic:View": "单级字典",
+    "ComplexDic:View": "复合字典",
+    "Permission:Create": "创建",
+    "Permission:Update": "更新",
+    "Permission:Delete": "删除",
+    "Permission:Read": "读取",
+    "UnknownDicCategory": "未知字典类别"
+  }
+}
