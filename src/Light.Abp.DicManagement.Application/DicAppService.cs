@@ -63,8 +63,9 @@ namespace Light.Abp.DicManagement
             {
                 Code = x.Code,
                 Name = (x.I18n == null || !x.I18n.ContainsKey(lang)) ? x.Name : x.I18n[lang],
+                Sort = x.Sort,
                 I18n = x.I18n
-            }).ToList();
+            }).OrderBy(x => x.Sort).ToList();
         }
 
         [AllowAnonymous]
@@ -80,8 +81,9 @@ namespace Light.Abp.DicManagement
                 {
                     Code = y.Code,
                     Name = (y.I18n == null || !y.I18n.ContainsKey(lang)) ? y.Name : y.I18n[lang],
+                    Sort = y.Sort,
                     I18n = y.I18n
-                }).ToList()
+                }).OrderBy(x => x.Sort).ToList()
             }).ToList();
         }
     }

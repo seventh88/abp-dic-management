@@ -11,17 +11,18 @@ namespace Light.Abp.DicManagement
         {
         }
 
-        public Dic(string category, string name, string code, Dictionary<string, string> i18n)
+        public Dic(string category, string name, string code, int sort, Dictionary<string, string> i18n)
         {
             Category = category;
             Name = name;
             Code = code;
+            Sort = sort;
             this.I18n = i18n;
         }
-        public Dic(string category, string name, Dictionary<string, string> i18n) : this(category, name, name, i18n)
+        public Dic(string category, string name, int sort, Dictionary<string, string> i18n) : this(category, name, name, sort, i18n)
         {
         }
-        public Dic(string category, string name) : this(category, name, name, new Dictionary<string, string>())
+        public Dic(string category, string name, int sort) : this(category, name, name, sort, new Dictionary<string, string>())
         {
         }
 
@@ -33,6 +34,8 @@ namespace Light.Abp.DicManagement
 
         [Required]
         public string Code { get; set; }
+
+        public int Sort { get; set; }
 
         [Column(TypeName = "jsonb")]
         public Dictionary<string, string> I18n { get; set; }

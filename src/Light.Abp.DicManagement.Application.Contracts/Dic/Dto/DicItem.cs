@@ -16,6 +16,8 @@ namespace Light.Abp.DicManagement
         /// <value>The name.</value>
         public string Name { get; set; }
 
+        public int Sort { get; set; }
+
         /// <summary>
         /// I18n
         /// </summary>
