@@ -33,9 +33,9 @@ namespace Light.Abp.DicManagement
 
         protected override string DeletePolicyName => AbpDicManagementPermissions.Dic.Delete;
 
-        protected override IQueryable<Dic> CreateFilteredQuery(QueryDicDto input)
+        protected override async Task<IQueryable<Dic>> CreateFilteredQueryAsync(QueryDicDto input)
         {
-            IQueryable<Dic> queryable = Repository.Where(x => x.Category == input.Category);
+            IQueryable<Dic> queryable = (await Repository.GetQueryableAsync()).Where(x => x.Category == input.Category);
             if (!string.IsNullOrWhiteSpace(input.Filter))
             {
                 queryable = queryable.Where(x => x.Name.Contains(input.Filter) || x.Code.Contains(input.Filter));

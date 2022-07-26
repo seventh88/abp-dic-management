@@ -16,12 +16,12 @@ namespace Light.Abp.DicManagement.EntityFrameworkCore
 
         public async Task<List<string>> GetCategoriesAsync()
         {
-            return await DbSet.Select(x => x.Category).Distinct().ToListAsync();
+            return await (await GetQueryableAsync()).Select(x => x.Category).Distinct().ToListAsync();
         }
 
         public async Task<List<Dic>> GetListByCategoryAsync(string category, CancellationToken cancellationToken = default)
         {
-            return await DbSet.Where(x => x.Category == category).ToListAsync();
+            return await (await GetQueryableAsync()).Where(x => x.Category == category).ToListAsync();
         }
     }
 }

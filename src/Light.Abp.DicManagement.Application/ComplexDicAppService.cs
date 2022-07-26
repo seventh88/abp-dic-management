@@ -31,9 +31,9 @@ namespace Light.Abp.DicManagement
 
         protected override string DeletePolicyName => AbpDicManagementPermissions.ComplexDic.Delete;
 
-        protected override IQueryable<ComplexDic> CreateFilteredQuery(QueryComplexDicDto input)
+        protected override async Task<IQueryable<ComplexDic>> CreateFilteredQueryAsync(QueryComplexDicDto input)
         {
-            IQueryable<ComplexDic> queryable = Repository.Where(x => x.Category == input.Category);
+            IQueryable<ComplexDic> queryable = (await Repository.GetQueryableAsync()).Where(x => x.Category == input.Category);
             if (!string.IsNullOrWhiteSpace(input.Filter))
             {
                 queryable = queryable.Where(x => x.Name.Contains(input.Filter) || x.Code.Contains(input.Filter));
