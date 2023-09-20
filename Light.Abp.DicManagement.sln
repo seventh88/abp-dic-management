@@ -13,6 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Light.Abp.DicManagement.Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Light.Abp.DicManagement.EntityFrameworkCore", "src\Light.Abp.DicManagement.EntityFrameworkCore\Light.Abp.DicManagement.EntityFrameworkCore.csproj", "{A38A6DA8-24D5-449E-990D-DABAF5B19920}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{6142AC95-83B7-4571-85A2-2F46ECE49415}"
+	ProjectSection(SolutionItems) = preProject
+		common.props = common.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
